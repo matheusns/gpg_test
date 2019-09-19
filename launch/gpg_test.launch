@@ -1,0 +1,17 @@
+<launch>
+
+    <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+		<remap from="image" to="gpg/image" />
+    </node>
+
+    <include file="$(find gpg_remote)/launch/gpg_remote.launch"/>
+
+        <node
+            output = "screen"
+            pkg="gpg_test" type="robot_controller_main.py" name="robot_pose_controller"/>
+
+        <node
+            launch-prefix="xterm -e"
+            output = "screen"
+            pkg="turtlesim_control" type="goal_sender_main.py" name="turtle_pose_goal_sender" />
+</launch>
