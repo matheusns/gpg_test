@@ -6,6 +6,7 @@
 
     <include file="$(find gpg_remote)/launch/gpg_remote.launch"/>
 
+<?ignore>
         <node
             output = "screen"
             pkg="gpg_test" type="robot_controller_main.py" name="robot_pose_controller"/>
@@ -14,4 +15,10 @@
             launch-prefix="xterm -e"
             output = "screen"
             pkg="turtlesim_control" type="goal_sender_main.py" name="turtle_pose_goal_sender" />
+?>
+
+     <node
+        output = "screen"
+        pkg="gpg_test" type="GoPiGo_line_follower_main.py" name="GoPiGo_line_follower_node"/>
+
 </launch>
