@@ -5,30 +5,33 @@
 <!--           Luciana Reys 1920856 (@lsnreys) -->
 
 <launch>
-    <!-- The following lines are respective to exercise 2 item 'b'-->
+    <!-- The following lines are respective to exercise 2.1 item 'b'-->
     <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
         <param name="image_transport" value="compressed" />
 		<remap from="image" to="gpg/image" />
     </node>
 
     <include file="$(find gpg_remote)/launch/gpg_remote.launch"/>
-    <!-- The previous lines are respective to exercise 2 item 'b'-->
+    <!-- The previous lines are respective to exercise 2.1 item 'b'-->
 
     <node
         output = "screen"
         pkg="gpg_test" type="robot_controller_main.py" name="robot_pose_controller"/>
 
-    <!-- The following lines are respective to exercise 2 item 'e'-->
-    <node
-        launch-prefix="xterm -e"
-        output = "screen"
-        pkg="gpg_test" type="goal_sender_main.py" name="random_goal_sender" />
-    <!-- The previous lines are respective to exercise 2 item 'e'-->
-
     <?ignore
+        <!-- The following lines are respective to exercise 2.1 item 'e'-->
+        <node
+            launch-prefix="xterm -e"
+            output = "screen"
+            pkg="gpg_test" type="goal_sender_main.py" name="random_goal_sender" />
+        <!-- The previous lines are respective to exercise 2.1 item 'e'-->
+    ?>
+
+    <!-- The following lines are respective to exercise 2.2-->
      <node
         output = "screen"
         pkg="gpg_test" type="GoPiGo_line_follower_main.py" name="GoPiGo_line_follower_node"/>
-    ?>
+    <!-- The previous lines are respective to exercise 2.2-->
+
 
 </launch>
