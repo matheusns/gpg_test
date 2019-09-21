@@ -6,7 +6,7 @@
 
     <include file="$(find gpg_remote)/launch/gpg_remote.launch"/>
 
-<?ignore>
+<?ignore
         <node
             output = "screen"
             pkg="gpg_test" type="robot_controller_main.py" name="robot_pose_controller"/>
