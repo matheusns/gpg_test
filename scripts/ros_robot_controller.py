@@ -65,7 +65,7 @@ class RobotController:
         self.velocity_publisher.publish(vel_msg)
 
     def euclideanDistance(self, goal_pose):
-        return sqrt(pow((goal_pose.x - x), 2) + pow((goal_pose.y - y), 2))
+        return sqrt(pow((goal_pose.x - self.current_pose.pose.pose.position.x), 2) + pow((goal_pose.y - self.current_pose.pose.pose.position.y), 2))
 
     def linearVelocity(self, goal_pose, gain=0.1):
         return gain * self.euclideanDistance(goal_pose)
@@ -84,4 +84,4 @@ class RobotController:
         return quaternion
 
     def angleToTheGoal(self, goal_pose):
-        return atan2(goal_pose.y - y, goal_pose.x - x)
+        return atan2(goal_pose.y - self.current_pose.pose.pose.position.y, goal_pose.x - self.current_pose.pose.pose.position.x)
