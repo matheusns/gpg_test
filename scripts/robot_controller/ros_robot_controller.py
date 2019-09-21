@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # BSD 3-Clause License
 #
-# Copyright (c) 2019, Matheus Nascimento
+# Copyright (c) 2019, Matheus Nascimento, Luciana Reys
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
