@@ -85,13 +85,13 @@ class GoPiGoLineFollower:
         # [x,y,z,theta]
         # todo: Update gains and increments
         self.directions = {}
-        self.directions["goStraight"] = [1, 0, 0, 0]
-        self.directions["turnSlightLeft"] = [1,0,0,1]
-        self.directions["turnLeft"] = [1, 0, 0, 1]
-        self.directions["turnSlightRight"] = [1,0,0,-1]
-        self.directions["turnRight"] = [0,0,0,-1]
-        self.directions["stop"] = [0, 0, 0, 0]
-        self.directions["goBack"] = [-1, 0, 0, 0]
+        self.directions["goStraight"] = [1.32, 0.0, 0.0, 0.0]
+        self.directions["turnSlightLeft"] = [0.8, 0.0, 0.0, 1]
+        self.directions["turnLeft"] = [0.3, 0.0, 0.0, 1]
+        self.directions["turnSlightRight"] = [0.8, 0.0, 0.0, -1]
+        self.directions["turnRight"] = [0.3, 0.0, 0.0, -1]
+        self.directions["stop"] = [0.0, 0.0, 0.0, 0.0]
+        self.directions["goBack"] = [-1, 0.0, 0.0, 0.0]
 
     def initROSChannels(self):
         self.sensors_listener = rospy.Subscriber("gpg/state", State, self.callbackState)

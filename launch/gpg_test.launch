@@ -20,32 +20,16 @@
 
     <?ignore
         <!-- The following lines are respective to exercise 2.1 item 'e'-->
-        <node
-            launch-prefix="xterm -e"
-            output = "screen"
-            pkg="gpg_test" type="goal_sender_main.py" name="random_goal_sender" />
+            <node
+                launch-prefix="xterm -e"
+                output = "screen"
+                pkg="gpg_test" type="goal_sender_main.py" name="random_goal_sender" />
         <!-- The previous lines are respective to exercise 2.1 item 'e'-->
     ?>
 
-    <!-- The following lines are respective to exercise 2.2-->
+    <!--The following lines are respective to exercise 2.2-->
      <node
         output = "screen"
         pkg="gpg_test" type="GoPiGo_line_follower_main.py" name="GoPiGo_line_follower_node"/>
     <!-- The previous lines are respective to exercise 2.2-->
-
-
-<?ignore
-        <node
-            output = "screen"
-            pkg="gpg_test" type="robot_controller_main.py" name="robot_pose_controller"/>
-
-        <node
-            launch-prefix="xterm -e"
-            output = "screen"
-            pkg="turtlesim_control" type="goal_sender_main.py" name="turtle_pose_goal_sender" />
-?>
-
-     <node
-        output = "screen"
-        pkg="gpg_test" type="GoPiGo_line_follower_main.py" name="GoPiGo_line_follower_node"/>
 </launch>
